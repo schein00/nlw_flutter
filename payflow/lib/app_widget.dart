@@ -3,6 +3,7 @@ import 'package:payflow/modules/home/home_page.dart';
 import 'package:payflow/modules/splash/splash_page.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 
+import 'modules/barcode_scanner/barcode_scaner_page.dart';
 import 'modules/login/login_page.dart';
 
 class PayFlow extends StatelessWidget {
@@ -12,12 +13,16 @@ class PayFlow extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pay Flow',
-      theme: ThemeData(primaryColor: AppColors.primary),
+      theme: ThemeData(
+        primaryColor: AppColors.primary,
+        primarySwatch: Colors.orange,
+      ),
       initialRoute: '/splash',
       routes: {
         '/home': (context) => HomePage(),
         '/login': (context) => LoginPage(),
-        '/splash': (context) => SplashPage()
+        '/splash': (context) => SplashPage(),
+        '/barcode_scanner': (context) => BarcodeScannerPage()
       },
     );
   }
